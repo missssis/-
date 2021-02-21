@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import javax.annotation.Resource;
 
 @Controller("userController")
-@RequestMapping("user")
+@RequestMapping("/user")
 public class UserController {
 
     @Resource

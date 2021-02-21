@@ -4,6 +4,19 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
 
+  <listener>
+    <listener-class>
+      org.springframework.web.context.ContextLoaderListener
+    </listener-class>
+  </listener>
+
+  <!-- 实例化ApplicationContext容器 -->
+  <context-param>
+    <!-- 加载src目录下的 applicationContext-*.xml文件-->
+    <param-name>contextConfigLocation</param-name>
+    <param-value>classpath:applicationContext.xml</param-value>
+  </context-param>
+
   <!-- 配置SpringMVC的核心控制器 -->
   <servlet>
     <servlet-name>DispatcherServlet</servlet-name>
@@ -16,16 +29,6 @@
     <!-- 随着系统启动的时候而加载 -->
     <load-on-startup>1</load-on-startup>
   </servlet>
-<!--  <listener>-->
-<!--    <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>-->
-<!--  </listener>-->
-<!--  <context-param>-->
-<!--    <param-name>contextConfigLocation</param-name>-->
-<!--    <param-value>classpath:applicationContext.xml</param-value>-->
-<!--  </context-param>-->
-  <welcome-file-list>
-    <welcome-file>home.jsp</welcome-file>
-  </welcome-file-list>
 
   <servlet-mapping>
     <servlet-name>DispatcherServlet</servlet-name>
